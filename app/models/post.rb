@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   has_many :liked_by_users, through: :likes, source: :user
 
   def self.update_posts_counter(user)
-    user_posts = Post.where(author: user).count
+    user_posts = where(author: user).count
     user.posts_counter = user_posts
   end
 
