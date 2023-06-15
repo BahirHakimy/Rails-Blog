@@ -38,7 +38,7 @@ RSpec.describe Post, type: :model do
 
   context 'methods' do
     it 'should correctly update the posts counter for a given user' do
-      new_post = Post.create(title: 'New Post', text: 'How are you', author:)
+      Post.create(title: 'New Post', text: 'How are you', author:)
 
       posts_counter = Post.update_posts_counter(author)
 
