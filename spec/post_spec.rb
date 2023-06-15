@@ -45,15 +45,16 @@ RSpec.describe Post, type: :model do
       expect(posts_counter).to eq 2
     end
     it 'should return 5 most recent commetns for a given post' do
-      very_very_old_comment = Comment.create(user: author,post:subject,text:'Love it',created_at:4.days.ago)
-      very_old_comment = Comment.create(user: author,post:subject,text:'Love it',created_at:3.days.ago)
-      old_comment = Comment.create(user: author,post:subject,text:'Love it',created_at:2.days.ago)
-      new_comment = Comment.create(user: author,post:subject,text:'Love it',created_at:1.days.ago)
-      recent_comment = Comment.create(user: author,post:subject,text:'Love it',created_at:Time.current)
+      very_very_old_comment = Comment.create(user: author, post: subject, text: 'Love it', created_at: 4.days.ago)
+      very_old_comment = Comment.create(user: author, post: subject, text: 'Love it', created_at: 3.days.ago)
+      old_comment = Comment.create(user: author, post: subject, text: 'Love it', created_at: 2.days.ago)
+      new_comment = Comment.create(user: author, post: subject, text: 'Love it', created_at: 1.days.ago)
+      recent_comment = Comment.create(user: author, post: subject, text: 'Love it', created_at: Time.current)
 
       most_recent_comments = Post.most_recent_comments(subject)
 
-      expect(most_recent_comments).to eq([recent_comment, new_comment, old_comment,very_old_comment,very_very_old_comment])
+      expect(most_recent_comments).to eq([recent_comment, new_comment, old_comment, very_old_comment,
+                                          very_very_old_comment])
     end
   end
 end
