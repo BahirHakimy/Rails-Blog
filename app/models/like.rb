@@ -4,6 +4,6 @@ class Like < ApplicationRecord
 
   def self.update_likes_counter(target_post)
     count = where(post: target_post).count
-    post.likes_counter = count
+    target_post.likes_counter = count
   end
 end
