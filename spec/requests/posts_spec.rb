@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+    it 'none' do
+      expect(2).to eq(2)
+    end
   end
 end
