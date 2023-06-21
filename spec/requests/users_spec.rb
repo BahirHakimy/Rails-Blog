@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  describe 'GET /index' do
+  describe 'GET /users' do
     before { get '/users' }
     it 'should return ok response' do
       expect(response).to be_successful
@@ -19,7 +19,7 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-  describe 'GET /show' do
+  describe 'GET /users/:id' do
     let(:user) { User.create(name: 'Mike Tyson') }
     before { get "/users/#{user.id}" }
 
