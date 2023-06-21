@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  let(:user) {User.create(name:"Mike Tyson")}
-  let(:post) {Post.create(title:"Post",text:"First Post",author:user)}
+  let(:user) { User.create(name: 'Mike Tyson') }
+  let(:post) { Post.create(title: 'Post', text: 'First Post', author: user) }
   describe 'GET /users/:user_id/posts' do
-
     before { get "/users/#{user.id}/posts" }
     it 'should return ok response' do
       expect(response).to be_successful
