@@ -4,6 +4,7 @@ body {
   align-items: center;
   font-family: 'Inter', sans-serif;
 }
+
 .user-list {
   list-style-type: none;
   padding: 0;
@@ -24,6 +25,7 @@ body {
 .user-preview:visited {
   color: royalblue;
 }
+
 .user-preview:link {
   color: royalblue;
 }
@@ -65,10 +67,12 @@ body {
   align-items: flex-start;
   width: 25rem;
 }
+
 .info h2 {
   font-size: 1.8rem;
   padding: 1rem 0;
 }
+
 .info sub {
   align-self: flex-end;
   font-weight: bold;
