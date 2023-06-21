@@ -1,0 +1,7 @@
+<a href="/users/<%=post.author_id-%>/posts/<%=post.id-%>" class="post-card">
+  <h3 class="post-title"><%= post.title -%></h3>
+  <p><%= post.text -%></p>
+  <span class="post-footer">
+    Comments: <%= post.comments_counter -%>, Likes: <%= post.likes_counter -%>
+  </span>
+</a>

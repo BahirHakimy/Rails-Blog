@@ -1,6 +1,8 @@
 require_relative '../models/user'
 
 class UsersController < ApplicationController
+  layout 'main'
+
   def index
     puts 'Hello'
     @users = User.all
