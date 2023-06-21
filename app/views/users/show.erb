@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Styles for user details */
+      .user-details {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .user-details .image {
+        margin-right: 10px;
+      }
+
+      .user-details img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .user-details h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .user-details p {
+        margin: 0;
+        color: gray;
+      }
+
+      /* Styles for posts */
+      .post-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .post-list li {
+        margin-bottom: 20px;
+      }
+
+      .post-list h3 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .post-list p {
+        margin: 0;
+      }
+
+      /* Button style */
+      .show-all-posts-button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .show-all-posts-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="user-details">
+      <div class="image">
+        <img
+          src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png"
+          alt="user"
+        />
+      </div>
+      <div>
+        <h2><%= @user.name %></h2>
+        <p><%= @user.bio %></p>
+      </div>
+    </div>
+
+    <h3>Posts</h3>
+    <ul class="post-list">
+      <% @user.posts.each do |post| %>
+      <li>
+        <h3><%= post.title %></h3>
+        <p><%= post.text %></p>
+      </li>
+      <% end %>
+    </ul>
+
+    <button class="show-all-posts-button">Show all posts</button>
+  </body>
+</html>

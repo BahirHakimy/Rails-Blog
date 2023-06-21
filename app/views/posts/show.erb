@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Styles for post detail */
+    .post-detail {
+      margin-bottom: 20px;
+    }
+
+    .post-detail textarea {
+      width: 100%;
+      height: 200px;
+      resize: none;
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    .post-meta {
+      color: gray;
+      margin-top: 5px;
+      text-align: right;
+    }
+
+    /* Styles for comments */
+    .comment-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .comment-list li {
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+
+    .comment-list .comment-user {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="post-detail">
+    <textarea readonly><%= @post.title %>
+<%= @post.text %></textarea>
+    <div class="post-meta">
+      Comments: <%= @post.comments_counter %>
+      | Likes: <%= @post.likes_counter %>
+    </div>
+  </div>
+
+  <h2>Comments</h2>
+  <ul class="comment-list">
+    <% @post.comments.each do |comment| %>
+    <li>
+      <div class="comment-user"><%= comment.user.name %></div>
+      <div class="comment-content"><%= comment.text %></div>
+    </li>
+    <% end %>
+  </ul>
+</body>
+</html>
