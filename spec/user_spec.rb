@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
       new_post = Post.create(title: 'New Post', text: 'How are you', author: subject, created_at: 1.days.ago)
       recent_post = Post.create(title: 'Recent Post', text: 'How are you', author: subject, created_at: Time.current)
 
-      most_recent_posts = subject.most_recent
+      most_recent_posts = subject.most_recent_posts
 
       expect(most_recent_posts).to eq([recent_post, new_post, old_post])
     end

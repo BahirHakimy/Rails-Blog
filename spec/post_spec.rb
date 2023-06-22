@@ -51,7 +51,7 @@ RSpec.describe Post, type: :model do
       new_comment = Comment.create(user: author, post: subject, text: 'Love it', created_at: 1.days.ago)
       recent_comment = Comment.create(user: author, post: subject, text: 'Love it', created_at: Time.current)
 
-      most_recent_comments = Post.most_recent_comments(subject)
+      most_recent_comments = subject.most_recent_comments
 
       expect(most_recent_comments).to eq([recent_comment, new_comment, old_comment, very_old_comment,
                                           very_very_old_comment])

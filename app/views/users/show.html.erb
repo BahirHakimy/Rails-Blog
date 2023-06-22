@@ -4,6 +4,6 @@
   <p><%= @user.bio -%></p>
 </div>
 <h3>Posts</h3>
-<% @user.posts.each do |post| %> <%= render partial: 'posts/post',
+<% @user.most_recent_posts.each do |post| %> <%= render partial: 'posts/post',
 locals:{post:post} -%> <% end %>
-<button class="show-all-posts-button">Show all posts</button>
+<a href="/users/<%=@user.id-%>/posts" class="show-all-posts-button">Show all posts</button>

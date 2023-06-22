@@ -2,5 +2,6 @@
 <%= render partial: 'users/user', locals:{user:@user}%> 
 <% @posts.each do |post|%> 
   <%= render partial: 'posts/post', locals:{post:post}%> 
-  <%= render partial: 'posts/comments', locals:{comments:post.comments}%> 
+  <%= render partial: 'posts/comments', locals:{comments:post.most_recent_comments}%> 
 <% end %>
+<button class="show-all-posts-button">Pagination</button>
