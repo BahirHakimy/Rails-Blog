@@ -1,0 +1,9 @@
+<%= render partial: 'users/user', locals:{user:@user} -%>
+<div class="user-bio">
+  <label class="bio-label">bio</label>
+  <p><%= @user.bio -%></p>
+</div>
+<h3>Posts</h3>
+<% @user.most_recent_posts.each do |post| %> <%= render partial: 'posts/post',
+locals:{post:post} -%> <% end %>
+<a href="/users/<%=@user.id-%>/posts" class="show-all-posts-button">Show all posts</button>
