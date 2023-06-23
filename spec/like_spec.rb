@@ -12,7 +12,7 @@ RSpec.describe Like, type: :model do
 
   context 'methods' do
     it 'should correctly update the likes_counter for a given post' do
-      likes_count = Like.update_likes_counter(post)
+      likes_count = subject.update_likes_counter
 
       expect(likes_count).to eq 1
     end

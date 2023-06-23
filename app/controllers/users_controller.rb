@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   layout 'main'
 
   def index
-    puts 'Hello'
     @users = User.all
   end
 
