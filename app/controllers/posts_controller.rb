@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     if post.save
       redirect_to user_posts_path(user_id: current_user.id)
     else
-      puts 'not valid'
+      flash.now[:error] = 'Error: Post could not be saved'
     end
   end
 

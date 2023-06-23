@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     if comment.save
       redirect_to user_post_path(user_id: current_user.id, id: params[:post_id])
     else
-      puts 'not valid'
+      flash.now[:error] = 'Error: Comment could not be saved'
     end
   end
 
