@@ -1,8 +1,8 @@
 <h1>List of Posts For User <%= @user.id %></h1>
 <%= render partial: 'users/user', locals:{user:@user}%> 
 <a href="<%=new_post_path(user_id:current_user.id)  %>" class="comment-button">Add Post</a>
-<% @posts.each do |post|%> 
+<% @user.posts.each do |post|%> 
   <%= render partial: 'posts/post', locals:{post:post}%> 
-  <%= render partial: 'posts/comments', locals:{comments:post.most_recent_comments}%> 
+  <%= render partial: 'posts/comments', locals:{comments:post.comments}%> 
 <% end %>
 <button class="show-all-posts-button">Pagination</button>
