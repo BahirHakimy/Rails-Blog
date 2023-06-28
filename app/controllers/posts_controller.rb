@@ -2,7 +2,7 @@ require_relative '../models/user'
 require_relative '../models/post'
 class PostsController < ApplicationController
   def index
-    @user = User.includes(posts:[comments:[:user]]).find(params[:user_id])
+    @user = User.includes(posts: [comments: [:user]]).find(params[:user_id])
   end
 
   def show

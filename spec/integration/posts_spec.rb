@@ -68,9 +68,7 @@ RSpec.describe 'Posts', type: :system do
       # I can see the username of each commentor.
       first_post.comments.each do |cm|
         expect(page).to have_content(cm.user.name)
-      end
-      # I can see the comment each commentor left.
-      first_post.comments.each do |cm|
+        # I can see the comment each commentor left.
         expect(page).to have_content(cm.text)
       end
     end
