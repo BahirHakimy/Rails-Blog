@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   layout 'main'
 
   def index
-    @users = User.all
+    @users = User.includes(:posts)
   end
 
   def show
