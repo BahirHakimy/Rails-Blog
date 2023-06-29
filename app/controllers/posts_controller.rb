@@ -1,6 +1,8 @@
 require_relative '../models/user'
 require_relative '../models/post'
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  layout 'main'
   def index
     @user = User.includes(posts: [comments: [:user]]).find(params[:user_id])
   end

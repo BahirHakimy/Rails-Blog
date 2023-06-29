@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root to: 'users#index'
+  devise_for :users, path: 'auth',
+                     path_names: { sign_in: 'login', password: 'secret', sign_up: 'register' }
+  devise_scope :user do
+    get '/users/sign_out', to: 'devise/sessions#destroy', as: :logout
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get '/users/:user_id/posts/new', to: 'posts#new', as: 'new_post'
   post '/users/:user_id/posts', to: 'posts#create', as: 'create_post'

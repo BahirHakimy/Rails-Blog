@@ -2,6 +2,7 @@ require_relative '../models/user'
 
 class UsersController < ApplicationController
   layout 'main'
+  before_action :authenticate_user!
 
   def index
     @users = User.includes(:posts)
