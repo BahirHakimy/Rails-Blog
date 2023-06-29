@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'rails_helper'
 require_relative '../app/models/user'
 require_relative '../app/models/post'
